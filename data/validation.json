@@ -1,0 +1,600 @@
+[
+    {
+        "input": {
+          "Source IP": "194.55.34.15",
+          "Destination IP": "192.168.1.130",
+          "Source Port": 60003,
+          "Destination Port": 22,
+          "Flow Key": "194.55.34.15->192.168.1.130",
+          "Timestamp": "2024-10-24T17:55:00.123456",
+          "Flow Data": {
+            "packets": 1400,
+            "bytes": 90000,
+            "protocol": "TCP"
+          },
+          "Payload": "SSH brute force attempt"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "SUSPICIOUS",
+          "category": "SSH Brute Force",
+          "reasons": [
+            "High number of connection attempts",
+            "External IP targeting SSH",
+            "Known brute force pattern"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.100",
+          "Destination IP": "10.0.0.9",
+          "Source Port": 49160,
+          "Destination Port": 3306,
+          "Flow Key": "192.168.1.100->10.0.0.9",
+          "Timestamp": "2024-10-24T17:56:00.234567",
+          "Flow Data": {
+            "packets": 10,
+            "bytes": 1200,
+            "protocol": "TCP"
+          },
+          "Payload": "SELECT * FROM sales WHERE region = 'west';"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "SQL Query",
+          "reasons": [
+            "Internal SQL database access",
+            "Expected packet size",
+            "Valid query structure"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "103.55.22.88",
+          "Destination IP": "192.168.1.170",
+          "Source Port": 60004,
+          "Destination Port": 80,
+          "Flow Key": "103.55.22.88->192.168.1.170",
+          "Timestamp": "2024-10-24T17:57:00.345678",
+          "Flow Data": {
+            "packets": 700,
+            "bytes": 60000,
+            "protocol": "TCP"
+          },
+          "Payload": "GET /admin HTTP/1.1\r\nUser-Agent: nmap"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "SUSPICIOUS",
+          "category": "Web Application Scan",
+          "reasons": [
+            "Nmap scanning pattern",
+            "Admin page access",
+            "External IP"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.200",
+          "Destination IP": "8.8.8.8",
+          "Source Port": 49161,
+          "Destination Port": 53,
+          "Flow Key": "192.168.1.200->8.8.8.8",
+          "Timestamp": "2024-10-24T17:58:00.456789",
+          "Flow Data": {
+            "packets": 2,
+            "bytes": 130,
+            "protocol": "UDP"
+          },
+          "Payload": "DNS query for news.api.com"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "DNS Query",
+          "reasons": [
+            "Standard DNS request",
+            "Google DNS server",
+            "Expected packet size"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "185.11.33.41",
+          "Destination IP": "192.168.1.140",
+          "Source Port": 50123,
+          "Destination Port": 3389,
+          "Flow Key": "185.11.33.41->192.168.1.140",
+          "Timestamp": "2024-10-24T17:59:00.567890",
+          "Flow Data": {
+            "packets": 1300,
+            "bytes": 95000,
+            "protocol": "TCP"
+          },
+          "Payload": "RDP brute force attempt"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "SUSPICIOUS",
+          "category": "RDP Brute Force",
+          "reasons": [
+            "High RDP connection attempts",
+            "External IP",
+            "Known brute force signature"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.40",
+          "Destination IP": "10.0.0.7",
+          "Source Port": 49002,
+          "Destination Port": 443,
+          "Flow Key": "192.168.1.40->10.0.0.7",
+          "Timestamp": "2024-10-24T18:00:00.678901",
+          "Flow Data": {
+            "packets": 12,
+            "bytes": 1500,
+            "protocol": "TCP"
+          },
+          "Payload": "GET /api/info HTTP/1.1\r\nHost: api.internal.local"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "API Info Request",
+          "reasons": [
+            "Internal API communication",
+            "Standard GET request",
+            "Expected response behavior"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "103.25.66.78",
+          "Destination IP": "192.168.1.190",
+          "Source Port": 61111,
+          "Destination Port": 3389,
+          "Flow Key": "103.25.66.78->192.168.1.190",
+          "Timestamp": "2024-10-24T18:01:00.789012",
+          "Flow Data": {
+            "packets": 1400,
+            "bytes": 100000,
+            "protocol": "TCP"
+          },
+          "Payload": "RDP brute force attempt"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "SUSPICIOUS",
+          "category": "RDP Brute Force",
+          "reasons": [
+            "High number of connection attempts",
+            "External IP",
+            "Known brute force pattern"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.210",
+          "Destination IP": "10.0.0.5",
+          "Source Port": 50002,
+          "Destination Port": 443,
+          "Flow Key": "192.168.1.210->10.0.0.5",
+          "Timestamp": "2024-10-24T18:02:00.890123",
+          "Flow Data": {
+            "packets": 12,
+            "bytes": 1400,
+            "protocol": "TCP"
+          },
+          "Payload": "POST /api/v3/update HTTP/1.1\r\nHost: api.internal.local"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "API Update Request",
+          "reasons": [
+            "Internal API access",
+            "Standard POST request",
+            "Expected packet size"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "185.32.44.88",
+          "Destination IP": "192.168.1.110",
+          "Source Port": 61234,
+          "Destination Port": 80,
+          "Flow Key": "185.32.44.88->192.168.1.110",
+          "Timestamp": "2024-10-24T18:03:00.123456",
+          "Flow Data": {
+            "packets": 600,
+            "bytes": 50000,
+            "protocol": "TCP"
+          },
+          "Payload": "GET /admin HTTP/1.1\r\nUser-Agent: Nmap"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "SUSPICIOUS",
+          "category": "Web Application Scan",
+          "reasons": [
+            "Admin page access",
+            "Nmap scanning behavior",
+            "External IP"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.55",
+          "Destination IP": "8.8.8.8",
+          "Source Port": 49162,
+          "Destination Port": 53,
+          "Flow Key": "192.168.1.55->8.8.8.8",
+          "Timestamp": "2024-10-24T18:04:00.234567",
+          "Flow Data": {
+            "packets": 2,
+            "bytes": 120,
+            "protocol": "UDP"
+          },
+          "Payload": "DNS query for stock.api.com"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "DNS Query",
+          "reasons": [
+            "Standard DNS request",
+            "Known DNS server",
+            "Expected payload size"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.95",
+          "Destination IP": "8.8.4.4",
+          "Source Port": 49163,
+          "Destination Port": 53,
+          "Flow Key": "192.168.1.95->8.8.4.4",
+          "Timestamp": "2024-10-24T18:05:00.345678",
+          "Flow Data": {
+            "packets": 2,
+            "bytes": 130,
+            "protocol": "UDP"
+          },
+          "Payload": "DNS query for finance.example.com"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "DNS Query",
+          "reasons": [
+            "Regular DNS lookup",
+            "Google DNS server",
+            "Expected packet size"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "203.77.22.100",
+          "Destination IP": "192.168.1.101",
+          "Source Port": 62345,
+          "Destination Port": 22,
+          "Flow Key": "203.77.22.100->192.168.1.101",
+          "Timestamp": "2024-10-24T18:06:00.456789",
+          "Flow Data": {
+            "packets": 1300,
+            "bytes": 85000,
+            "protocol": "TCP"
+          },
+          "Payload": "SSH brute force attack"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "SUSPICIOUS",
+          "category": "SSH Brute Force",
+          "reasons": [
+            "Excessive SSH attempts",
+            "External IP targeting SSH",
+            "Known brute force pattern"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.120",
+          "Destination IP": "8.8.8.8",
+          "Source Port": 49164,
+          "Destination Port": 53,
+          "Flow Key": "192.168.1.120->8.8.8.8",
+          "Timestamp": "2024-10-24T18:07:00.567890",
+          "Flow Data": {
+            "packets": 2,
+            "bytes": 125,
+            "protocol": "UDP"
+          },
+          "Payload": "DNS query for maps.api.com"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "DNS Query",
+          "reasons": [
+            "Standard DNS request",
+            "Known DNS server",
+            "Expected packet size"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "203.88.55.11",
+          "Destination IP": "192.168.1.110",
+          "Source Port": 60005,
+          "Destination Port": 22,
+          "Flow Key": "203.88.55.11->192.168.1.110",
+          "Timestamp": "2024-10-24T18:08:00.123456",
+          "Flow Data": {
+            "packets": 1400,
+            "bytes": 88000,
+            "protocol": "TCP"
+          },
+          "Payload": "SSH brute force attempt"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "SUSPICIOUS",
+          "category": "SSH Brute Force",
+          "reasons": [
+            "Excessive SSH attempts",
+            "External IP",
+            "Known brute force pattern"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.100",
+          "Destination IP": "10.0.0.5",
+          "Source Port": 49165,
+          "Destination Port": 3306,
+          "Flow Key": "192.168.1.100->10.0.0.5",
+          "Timestamp": "2024-10-24T18:09:00.234567",
+          "Flow Data": {
+            "packets": 10,
+            "bytes": 1300,
+            "protocol": "TCP"
+          },
+          "Payload": "SELECT COUNT(*) FROM users;"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "SQL Query",
+          "reasons": [
+            "Internal database request",
+            "Standard query structure",
+            "Expected packet size"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "103.66.22.77",
+          "Destination IP": "192.168.1.170",
+          "Source Port": 61234,
+          "Destination Port": 80,
+          "Flow Key": "103.66.22.77->192.168.1.170",
+          "Timestamp": "2024-10-24T18:10:00.345678",
+          "Flow Data": {
+            "packets": 600,
+            "bytes": 55000,
+            "protocol": "TCP"
+          },
+          "Payload": "GET /admin HTTP/1.1\r\nUser-Agent: Nmap"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "SUSPICIOUS",
+          "category": "Web Application Scan",
+          "reasons": [
+            "Nmap scanning pattern",
+            "Admin page access attempt",
+            "External IP source"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.90",
+          "Destination IP": "8.8.8.8",
+          "Source Port": 49166,
+          "Destination Port": 53,
+          "Flow Key": "192.168.1.90->8.8.8.8",
+          "Timestamp": "2024-10-24T18:11:00.456789",
+          "Flow Data": {
+            "packets": 2,
+            "bytes": 130,
+            "protocol": "UDP"
+          },
+          "Payload": "DNS query for calendar.api.com"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "DNS Query",
+          "reasons": [
+            "Standard DNS lookup",
+            "Known DNS server",
+            "Expected packet size"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "185.33.55.10",
+          "Destination IP": "192.168.1.145",
+          "Source Port": 51236,
+          "Destination Port": 3389,
+          "Flow Key": "185.33.55.10->192.168.1.145",
+          "Timestamp": "2024-10-24T18:12:00.567890",
+          "Flow Data": {
+            "packets": 1500,
+            "bytes": 95000,
+            "protocol": "TCP"
+          },
+          "Payload": "RDP brute force attempt"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "SUSPICIOUS",
+          "category": "RDP Brute Force",
+          "reasons": [
+            "High volume of RDP attempts",
+            "External IP",
+            "Known brute force behavior"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.60",
+          "Destination IP": "10.0.0.9",
+          "Source Port": 50301,
+          "Destination Port": 443,
+          "Flow Key": "192.168.1.60->10.0.0.9",
+          "Timestamp": "2024-10-24T18:13:00.678901",
+          "Flow Data": {
+            "packets": 15,
+            "bytes": 1600,
+            "protocol": "TCP"
+          },
+          "Payload": "GET /api/status HTTP/1.1\r\nHost: internalapi.local"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "API Health Check",
+          "reasons": [
+            "Internal API access",
+            "Expected request pattern",
+            "Standard HTTPS traffic"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "103.11.66.99",
+          "Destination IP": "192.168.1.150",
+          "Source Port": 60006,
+          "Destination Port": 3389,
+          "Flow Key": "103.11.66.99->192.168.1.150",
+          "Timestamp": "2024-10-24T18:14:00.789012",
+          "Flow Data": {
+            "packets": 1600,
+            "bytes": 100000,
+            "protocol": "TCP"
+          },
+          "Payload": "RDP brute force attempt"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "SUSPICIOUS",
+          "category": "RDP Brute Force",
+          "reasons": [
+            "Excessive RDP connection attempts",
+            "External IP",
+            "Known brute force pattern"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.210",
+          "Destination IP": "8.8.4.4",
+          "Source Port": 49167,
+          "Destination Port": 53,
+          "Flow Key": "192.168.1.210->8.8.4.4",
+          "Timestamp": "2024-10-24T18:15:00.123456",
+          "Flow Data": {
+            "packets": 2,
+            "bytes": 130,
+            "protocol": "UDP"
+          },
+          "Payload": "DNS query for docs.api.com"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "DNS Query",
+          "reasons": [
+            "Standard DNS lookup",
+            "Google DNS server",
+            "Expected packet size"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "203.44.22.33",
+          "Destination IP": "192.168.1.95",
+          "Source Port": 64500,
+          "Destination Port": 22,
+          "Flow Key": "203.44.22.33->192.168.1.95",
+          "Timestamp": "2024-10-24T18:16:00.234567",
+          "Flow Data": {
+            "packets": 1300,
+            "bytes": 86000,
+            "protocol": "TCP"
+          },
+          "Payload": "SSH brute force attempt"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "SUSPICIOUS",
+          "category": "SSH Brute Force",
+          "reasons": [
+            "Excessive SSH connection attempts",
+            "External IP",
+            "Known brute force pattern"
+          ]
+        }
+      },
+      {
+        "input": {
+          "Source IP": "192.168.1.65",
+          "Destination IP": "10.0.0.7",
+          "Source Port": 49168,
+          "Destination Port": 443,
+          "Flow Key": "192.168.1.65->10.0.0.7",
+          "Timestamp": "2024-10-24T18:17:00.345678",
+          "Flow Data": {
+            "packets": 15,
+            "bytes": 1700,
+            "protocol": "TCP"
+          },
+          "Payload": "POST /api/login HTTP/1.1\r\nHost: api.internal.local"
+        },
+        "instruction": "Analyze the network traffic pattern for suspicious behavior",
+        "output": {
+          "decision": "NORMAL",
+          "category": "API Login",
+          "reasons": [
+            "Internal API login",
+            "Expected packet size",
+            "Standard HTTPS request"
+          ]
+        }
+      }
+]
